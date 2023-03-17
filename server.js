@@ -9,10 +9,7 @@ const fileUpload = require("express-fileupload");
 const io = require("socket.io")(server, {
   allowEIO3: true, // false by default
 });
-app.use({
-  origin:["https://localhost:3000","https://google-meets.vercel.app"],
-  credentials:true,
-})
+
 app.use(express.static(path.join(__dirname, "")));
 var userConnections = [];
 io.on("connection", (socket) => {
